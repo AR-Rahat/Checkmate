@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Checkmate</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Checkmate</title>
 </head>
+
 <body>
   <header>
     <nav>
@@ -16,67 +18,98 @@
     </nav>
   </header>
   <!-- component -->
-<div class="bg-grey-lighter min-h-screen flex flex-col">
+  <div class="bg-grey-lighter min-h-screen flex flex-col">
     <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
-            <h1 class="mb-8 text-3xl text-center">Sign up</h1>
-            <input 
-                type="text"
-                class="block border border-grey-light w-full p-3 rounded mb-4"
-                name="fullname"
-                placeholder="Full Name" />
+      <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+        <h1 class="mb-8 text-3xl text-center">Sign up</h1>
+        <form action="javascript: sendMail()" method="POST">
+          <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="fullname"
+            placeholder="Full Name" />
+          <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="email"
+            placeholder="Email" id="email" />
+          <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="password"
+            placeholder="Password" />
+          <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="confirm_password"
+            placeholder="Confirm Password" />
 
-            <input 
-                type="text"
-                class="block border border-grey-light w-full p-3 rounded mb-4"
-                name="email"
-                placeholder="Email" />
-
-            <input 
-                type="password"
-                class="block border border-grey-light w-full p-3 rounded mb-4"
-                name="password"
-                placeholder="Password" />
-            <input 
-                type="password"
-                class="block border border-grey-light w-full p-3 rounded mb-4"
-                name="confirm_password"
-                placeholder="Confirm Password" />
-
-            <!-- <button
+          <!-- <button
                 type="submit"
                 class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
             >Create Account</button> -->
-            <a href="verifyemail.html">
-            <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-                  <!-- Heroicon name: solid/lock-closed -->
-                  <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-                
-            Create Account
-              </button>
-</a>
-            <div class="text-center text-sm text-grey-dark mt-4">
-                By signing up, you agree to the 
-                <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-                    Terms of Service
-                </a> and 
-                <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-                    Privacy Policy
-                </a>
-            </div>
+          <a href="verifyemail.html">
+            <button type="submit" id = "button1"
+              class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                <!-- Heroicon name: solid/lock-closed -->
+                <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Create Account
+            </button>
+          </a>
+        </form>
+        
+        <div class="text-center text-sm text-grey-dark mt-4">
+          By signing up, you agree to the
+          <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
+            Terms of Service
+          </a> and
+          <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
+            Privacy Policy
+          </a>
         </div>
+      </div>
 
-        <div class="text-grey-dark mt-6">
-            Already have an account? 
-            <a class="no-underline border-b border-blue text-blue" href="Login.html">
-                Log in
-            </a>.
-        </div>
+      <div class="text-grey-dark mt-6">
+        Already have an account?
+        <a class="no-underline border-b border-blue text-blue" href="Login.html">
+          Log in
+        </a>.
+      </div>
     </div>
-</div>
-  </body>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  var btn = document.getElementById("button1");
+  btn.onclick = function(){
+    var email = $('#email').val();
+    var digits = '0123456789';
+    let OTP = '';
+    for (let i = 0; i < 6; i++) {
+      OTP += digits[Math.floor(Math.random() * 10)];
+    }
+    var Body = 'Your OTP is : ' + OTP;
+
+    Email.send({
+    Host: "smtp.gmail.com",
+    Username: "checkmate.sdp@gmail.com",
+    Password: "beaking12",
+    To: email,
+    From: "checkmate.sdp@gmail.com",
+    Subject: "Verification code for Checkmate profile.",
+    Body: Body
+  }).then(
+     message => {
+    //   //console.log (message);
+    //   if (message == 'OK') {
+    //     //alert('Your mail has been send. Thank you for connecting.');
+        
+    //   } else {
+    //     console.error(message);
+    //     //alert('There is error at sending message. ')
+    //   }
+    window.location.href="verifyemail.html";
+    }
+   
+  );
+  }
+  
+</script>
+
 </html>
