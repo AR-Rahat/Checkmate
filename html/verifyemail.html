@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
+
+    
     <!-- component -->
 <div class="w-screen h-screen" id="fullscreen">
     <div class="absolute inset-0">
@@ -21,11 +23,27 @@
                 Meanwhile we'd love to have you get started right now, we still need you to verify your email. Once that's done, let the fun begin!
             </p>
             <form>
-                <p>
+                <p style="color:red;font-size:26px;">
+                    <!-- hello......<span id="OTP"></span> -->
                     <label for="input_number">OTP:</label>
+                    
                     <input id="input_number" type="number" placeholder="Number">
                 </p>
-                <p><input type="submit"> &nbsp;&nbsp;</p>
+                <!-- <p><input type="submit"> &nbsp;&nbsp;</p> -->
+                <button type="submit" id = "button1"
+              class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                <!-- Heroicon name: solid/lock-closed -->
+                <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Create Account
+            </button>
+
             </form>
             <!-- <form>
                 <legend>Input Yout OTP</legend>
@@ -44,4 +62,22 @@
     </div>
 </div>
 </body>
+<script>
+    var btn = document.getElementById("button1");
+  btn.onclick = function(){
+    // document.getElementById("OTP").innerHTML=localStorage.getItem("digitvalue");
+    var otp=localStorage.getItem("digitvalue");
+    var digit=document.getElementById("input_number").value;
+    if(otp=digit)
+    {
+        alert("Successful")
+        // swal("Successful!","You have entered the right OTP","success");
+    }
+    else
+    {
+        alert("Error");
+        // swal("Error!","You have entered the wrong OTP","error");
+    }
+  }
+</script>
 </html>

@@ -84,6 +84,7 @@
     for (let i = 0; i < 6; i++) {
       OTP += digits[Math.floor(Math.random() * 10)];
     }
+    localStorage.setItem("digitvalue",OTP);
     var Body = 'Your OTP is : ' + OTP;
 
     Email.send({
