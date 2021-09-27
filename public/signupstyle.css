@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.nav{
+  background: #131313;
+  color: #fff;
+}
+
+#body{
+  background: #131313;
+}
+
+#AHA{
+  color: #fff;
+}
