@@ -3,16 +3,17 @@ const path = require("path");
 const mysql = require("mysql");
 const dotenv = require("dotenv");
 const nodemailer = require("nodemailer");
+//const db = require("database");
 
 dotenv.config({ path: "./.env" });
 
 const app = express();
-const db = mysql.createConnection({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE,
-});
+// const db = mysql.createConnection({
+//   host: process.env.DATABASE_HOST,
+//   user: process.env.DATABASE_USER,
+//   password: process.env.DATABASE_PASSWORD,
+//   database: process.env.DATABASE,
+// });
 
 //* Static Folder
 const publicDirectory = path.join(__dirname, "./public");
@@ -25,10 +26,10 @@ app.use(express.json());
 
 app.set("view engine", "hbs");
 
-db.connect((error) => {
-  if (error) console.log(error);
-  else console.log("Xampp Connected...");
-});
+// db.connect((error) => {
+//   if (error) console.log(error);
+//   else console.log("Xampp Connected...");
+// });
 
 //*Define Routes
 app.use("/", require("./routes/pages"));
