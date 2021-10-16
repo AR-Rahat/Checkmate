@@ -27,19 +27,19 @@
     <h1 class="had">Sign up</h1>
     <form action="/auth/signup" method="post">
       <div class="txt_field">
-        <input type="text" name="name" placeholder="Full Name" id="name"/>
+        <input type="text" name="name" placeholder="Full Name" id="name" required/>
       </div>
       <div class="txt_field">
-        <input type="test" name="id" placeholder="select username" id="id"/>
+        <input type="test" name="id" placeholder="select username" id="id" required/>
       </div>
       <div class="txt_field">
-        <input type="email" name="email" placeholder="Email" id="email" />
+        <input type="email" name="email" placeholder="Email" id="email" required/>
       </div>
       <div class="txt_field">
-        <input type="password" name="password" placeholder="Password" id="password"/>
+        <input type="password" name="password" placeholder="Password" id="password" required/>
       </div>
       <div class="txt_field">
-        <input type="password" name="passwordConfirm" placeholder="Confirm Password" id="passwordConfirm"/>
+        <input type="password" name="passwordConfirm" placeholder="Confirm Password" id="passwordConfirm" required/>
       </div>
       
       <button type="submit" id = "button1" class="button1">
