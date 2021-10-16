@@ -22,59 +22,41 @@
     </nav>
   </header>
   <!-- component -->
-  <div class="bg-grey-lighter min-h-screen flex flex-col">
-    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-      <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
-        <h1 class="mb-8 text-3xl text-center">Sign up</h1>
-        <form action="/auth/signup" method="POST">  
-          {{!-- javascript: sendMail() --}}
-          <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="name"
-            placeholder="Full Name" id="name"/>
-            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="id"
-            placeholder="select username" id="id"/>
-          <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="email"
-            placeholder="Email" id="email" />
-          <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="password"
-            placeholder="Password" id="password"/>
-          <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="passwordConfirm"
-            placeholder="Confirm Password" id="passwordConfirm"/>
 
-          <!-- <button
-                type="submit"
-                class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
-            >Create Account</button> -->
-          {{!-- <a href="/verify"> --}}
-            <button type="submit" id = "button1"
-              class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              <span class="absolute left-0 inset-y-0 flex items-center pl-3"> 
-              </span>
+  <div class="center">
+    <h1 class="had">Sign up</h1>
+    <form action="/auth/signup" method="post">
+      <div class="txt_field">
+        <input type="text" name="name" placeholder="Full Name" id="name"/>
+      </div>
+      <div class="txt_field">
+        <input type="test" name="id" placeholder="select username" id="id"/>
+      </div>
+      <div class="txt_field">
+        <input type="email" name="email" placeholder="Email" id="email" />
+      </div>
+      <div class="txt_field">
+        <input type="password" name="password" placeholder="Password" id="password"/>
+      </div>
+      <div class="txt_field">
+        <input type="password" ame="passwordConfirm" placeholder="Confirm Password" id="passwordConfirm"/>
+      </div>
+      
+      <button type="submit" id = "button1" class="button1">
+        <span> 
+          </span>
               Create Account
-            </button>
-          {{!-- </a> --}}
-        </form>
-        
-        <div class="text-center text-sm text-grey-dark mt-4">
-          By signing up, you agree to the
-          <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-            Terms of Service
-          </a> and
-          <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-            Privacy Policy
-          </a>
-        </div>
-      </div>
+        </button>
+        <div class="privacy"> By signing up, you agree to the <a href="#">Terms of Service Privacy Policy</a></div>
+        <div class="privacy"> Already have an account? <a href="/login">Login</a></div>
+    </form>
+  </div>
 
-      <div class="text-grey-dark mt-6" id = "AHA">
-        Already have an account?
-        <a class="no-underline border-b border-blue text-blue" href="/login">
-          Log in
-        </a>.
-      </div>
-      {{#if message }}
-      <h4 class="alert alert-danger mt-4">{{message}}</h4>
-      {{/if}}
-      </div>
-      </div>
+    {{#if message }}
+    <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
+    
+      
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>

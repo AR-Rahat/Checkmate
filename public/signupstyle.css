@@ -143,10 +143,46 @@ input[type="submit"]:hover {
 .button1:hover {
   background-color: rgb(0, 0, 0);
 }
+.button2 {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  color: white;
+  background-color: #0a611b;
+  margin-bottom: 25px;
+}
+.button2:hover {
+  background-color: rgb(0, 0, 0);
+}
 .had {
   font-size: 1.875rem;
   line-height: 2.25rem;
   text-align: center;
   margin-bottom: 2rem;
   font-weight: inherit;
+}
+.had1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: inherit;
+  font-size: 20px;
+  margin: 10px;
+}
+.privacy {
+  margin: 10px;
+  text-align: center;
+  font-size: 15px;
+  color: #666666;
+}
+.privacy > a:hover {
+  text-decoration: underline;
+  transition: 0.3s ease-in;
+  color: #000000;
 }

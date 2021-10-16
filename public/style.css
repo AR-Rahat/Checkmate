@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -193,7 +193,7 @@
 /* hero section */
 .hero {
   background: #131313;
- /* background: linear-gradient(to right, #161616, #000000);*/
+  /* background: linear-gradient(to right, #161616, #000000);*/
   padding: 200px 0;
 }
 
@@ -333,7 +333,7 @@
 
 .main_btn:after {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   left: 0;
   width: 0;
@@ -345,7 +345,6 @@
 
 .main_btn:hover {
   color: #fff;
-
 }
 
 .main_btn:hover:after {
@@ -380,7 +379,7 @@
 }
 
 /* mobile responsive */
-@media screen and (max-width:1100px) {
+@media screen and (max-width: 1100px) {
   .main_container {
     display: grid;
     grid-template-columns: 1fr;
@@ -421,7 +420,7 @@
   }
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width: 400px) {
   .main_img-card {
     width: 250px;
     height: 250px;
@@ -494,13 +493,12 @@
 }
 
 .services_card:nth-child(2) {
-  background: #348F50;
+  background: #348f50;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #56B4D3, #348F50);
+  background: -webkit-linear-gradient(to right, #56b4d3, #348f50);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #56B4D3, #348F50);
+  background: linear-gradient(to right, #56b4d3, #348f50);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .services_card:nth-child(3) {
@@ -513,20 +511,20 @@
   );
 }
 
-.services_card h2{
+.services_card h2 {
   text-align: center;
 }
-.services_card p{
+.services_card p {
   text-align: center;
   margin-top: 24px;
   font-size: 20px;
 }
-.services_btn{
+.services_btn {
   display: flex;
   justify-content: center;
   margin-top: 16px;
 }
-.services_card button{
+.services_card button {
   color: #fff;
   padding: 14px 24px;
   border: none;
@@ -535,26 +533,24 @@
   font-size: 1rem;
 }
 
-.services_card button:hover{
+.services_card button:hover {
   cursor: pointer;
 }
-.services_card:hover{
-  transform:scale(1.075);
+.services_card:hover {
+  transform: scale(1.075);
   transition: 0.3s ease-in;
   cursor: pointer;
 }
 
-@media screen and (max-width:1300px) {
-  .services_wrapper{
+@media screen and (max-width: 1300px) {
+  .services_wrapper {
     grid-template-columns: 1fr 1fr;
   }
-  
 }
-@media screen and (max-width:768px) {
-  .services_wrapper{
+@media screen and (max-width: 768px) {
+  .services_wrapper {
     grid-template-columns: 1fr;
   }
-  
 }
 
 /* Footer CSS */
