@@ -39,7 +39,7 @@
         <input type="password" name="password" placeholder="Password" id="password"/>
       </div>
       <div class="txt_field">
-        <input type="password" ame="passwordConfirm" placeholder="Confirm Password" id="passwordConfirm"/>
+        <input type="password" name="passwordConfirm" placeholder="Confirm Password" id="passwordConfirm"/>
       </div>
       
       <button type="submit" id = "button1" class="button1">
@@ -50,16 +50,17 @@
         <div class="privacy"> By signing up, you agree to the <a href="#">Terms of Service Privacy Policy</a></div>
         <div class="privacy"> Already have an account? <a href="/login">Login</a></div>
     </form>
-  </div>
-
     {{#if message }}
     <h4 class="alert alert-danger mt-4">{{message}}</h4>
     {{/if}}
+  </div>
+
+    
     
       
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+{{!-- <script src="https://smtpjs.com/v3/smtp.js"></script> --}}
 {{!-- <script src="/javascript/sendotp.js"></script> --}}
 
 </html>

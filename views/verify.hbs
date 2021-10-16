@@ -24,7 +24,7 @@
   <h2 class="had1">Write the OTP to continue</h2>
       <form action="/auth/verify" method="POST">
       <div class="txt_field">
-        <input type="number" placeholder="OTP">
+        <input type="number" placeholder="OTP" id="OTP"  name="OTP" required>
       </div>
       <button class="button2" type="submit">Authenticate</button>
     </form>
@@ -36,6 +36,6 @@
   </div>
 
 </body>
-<script src="/javascript/checkotp.js"></script>
+{{!-- <script src="/javascript/checkotp.js"></script> --}}
 
 </html>

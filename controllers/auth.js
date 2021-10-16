@@ -20,13 +20,7 @@ exports.signup = (req, res) => {
   console.log(req.body);
   var cnt1 = 0,
     cnt2 = 0;
-  const {
-    name,
-    email,
-    id,
-    password,
-    passwordConfirm
-  } = req.body;
+  const { name, email, id, password, passwordConfirm } = req.body;
 
   db.query(
     "select email from login where email=?",
@@ -128,9 +122,7 @@ exports.signup = (req, res) => {
 
 exports.verify = (req, res) => {
   console.log(req.body);
-  const {
-    OTP
-  } = req.body;
+  const { OTP } = req.body;
   fs.readFile("user.json", "utf-8", (err, data) => {
     if (err) {
       console.log(err);
@@ -138,7 +130,8 @@ exports.verify = (req, res) => {
       const user = JSON.parse(data.toString());
       if (user.OTP === OTP) {
         db.query(
-          "insert into login set ?", {
+          "insert into login set ?",
+          {
             name: user.name,
             id: user.id,
             email: user.email,
@@ -165,10 +158,7 @@ exports.verify = (req, res) => {
 exports.login = (req, res) => {
   console.log(req.body);
 
-  const {
-    email_username,
-    password
-  } = req.body;
+  const { email_username, password } = req.body;
 
   // let username = email_username;
   // let login_pass = password;
