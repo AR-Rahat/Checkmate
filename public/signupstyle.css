@@ -35,7 +35,7 @@ body {
 .center h1 {
   text-align: center;
   padding: 20px 0;
-  border-bottom: 1px solid silver;
+  /* border-bottom: 1px solid silver; */
 }
 .center form {
   padding: 0 40px;
@@ -43,13 +43,13 @@ body {
 }
 form .txt_field {
   position: relative;
-  border-bottom: 2px solid #adadad;
+  border: 1px solid #adadad;
   margin: 30px 0;
 }
 .txt_field input {
   width: 100%;
   padding: 0 5px;
-  height: 40px;
+  height: 50px;
   font-size: 16px;
   border: none;
   background: none;
@@ -75,7 +75,7 @@ form .txt_field {
   background: #2691d9;
   transition: 0.5s;
 }
-.txt_field input:focus ~ label,
+/* .txt_field input:focus ~ label,
 .txt_field input:valid ~ label {
   top: -5px;
   color: #000000;
@@ -83,7 +83,7 @@ form .txt_field {
 .txt_field input:focus ~ span::before,
 .txt_field input:valid ~ span::before {
   width: 100%;
-}
+} */
 .pass {
   margin: -5px 0 20px 5px;
   color: #a6a6a6;
@@ -92,6 +92,7 @@ form .txt_field {
 .pass:hover {
   text-decoration: underline;
   transition: 0.3s ease-in;
+  color: #000000;
 }
 .pass a {
   text-decoration: none;
@@ -119,23 +120,25 @@ input[type="submit"]:hover {
   color: #666666;
 }
 .signup_link a {
-  color: #2691d9;
+  color: #a6a6a6;
   text-decoration: none;
 }
 .signup_link a:hover {
   text-decoration: underline;
+  transition: 0.3s ease-in;
+  color: #000000;
 }
 .button1 {
   width: 100%;
   border: none;
   outline: none;
-  padding: 12px;
+  padding: 10px;
   font-size: 20px;
-  border-radius: 50px;
+  border-radius: 0.375rem;
   cursor: pointer;
   transition: 0.3s ease-in;
   color: white;
-  background-color: rgba(5, 150, 10, 0.665);
+  background-color: #0a611b;
 }
 .button1:hover {
   background-color: rgb(0, 0, 0);
