@@ -1,0 +1,43 @@
+.center2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+}
+.center2 h1 {
+  text-align: center;
+  padding: 20px 0;
+}
+.center2 form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.button3 {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  color: white;
+  background-color: #0a611b;
+  margin-bottom: 25px;
+}
+.button3:hover {
+  background-color: rgb(0, 0, 0);
+}
+.had2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: inherit;
+  font-size: 20px;
+  margin: 10px;
+}
