@@ -16,6 +16,7 @@ const app = express();
 // });
 
 //* Static Folder
+//app.use(express.static(path.join(__dirname, "public")));
 const publicDirectory = path.join(__dirname, "./public");
 app.use(express.static(publicDirectory));
 
