@@ -1,25 +1,29 @@
-const express = require('express')
+const express = require("express");
 
-const router = express.Router()
+const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.render('index')
-})
+  res.render("index");
+});
 
 // router.get("/index", (req, res) => {
 //   res.render('index')
 // })
 
 router.get("/signup", (req, res) => {
-  res.render('signup')
-})
+  res.render("signup");
+});
 
 router.get("/login", (req, res) => {
-  res.render('login')
-})
+  res.render("login");
+});
 
 router.get("/verify", (req, res) => {
-  res.render('verify')
-})
+  res.render("verify");
+});
+
+router.get("/homepage", (req, res) => {
+  res.render("homepage");
+});
 
 module.exports = router;

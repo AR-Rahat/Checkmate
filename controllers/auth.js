@@ -237,7 +237,7 @@ exports.login = (req, res) => {
                 if (doMatch) {
                   console.log("login Successful");
                   if (results.length > 0) {
-                    res.render("index");
+                    res.render("homepage");
                   }
                 } else {
                   return res.render("login", {
@@ -252,4 +252,10 @@ exports.login = (req, res) => {
     }
   );
   //}
+};
+
+exports.homepage = (req, res) => {
+  console.log(req.body);
+
+  //const { email_username, password } = req.body;
 };
