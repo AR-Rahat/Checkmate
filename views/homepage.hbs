@@ -5,23 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="/signupstyle.css">
     <link rel="stylesheet" href="/internalstyle.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="/style.css">
+     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="icon" href="/image/Screenshot_1.jpg" type="image/gif">
 </head>
 <body id="body">
-  <header>
+  {{!-- <header>
     <nav>
       <ul class="nav">
         <li><a href="/">Checkmate</a></li>
-        <li><a href="login">Login</a></li>
-        <li><a href="signup">Signup</a></li>
       </ul>
     </nav>
-  </header>
+  </header> --}}
 
-  <h2>This is home page</h2>
-  <h3>Hello World</h3>
+  <div class="btn">
+         <span class="fas fa-bars"></span>
+      </div>
+      <nav class="sidebar">
+         <div class="text">
+            <a href="/" id="id1">Checkmate</a>
+         </div>
+         <ul>
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li>
+               <a href="#" class="feat-btn">Games
+               <span class="fas fa-caret-down first"></span>
+               </a>
+               <ul class="feat-show">
+                  <li><a href="#">The Chess Game</a></li>
+                  <li><a href="#">The Snake Game</a></li>
+                  <li><a href="#">Tic Tac Toe</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#" class="serv-btn">Account
+               <span class="fas fa-caret-down second"></span>
+               </a>
+               <ul class="serv-show">
+                  <li><a href="#">Change Profile Picture</a></li>
+                  <li><a href="#">Change Usename</a></li>
+                  <li><a href="#">Change Name</a></li>
+                  <li><a href="#">Change Password</a></li>
+               </ul>
+            </li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Report</a></li>
+            <li><a href="#">Logout</a></li>
+         </ul>
+      </nav>
+      <div class="services" id="services">
+    <h1>Available games</h1>
+    <div class="services_wrapper">
+      <div class="services_card">
+        <h2>The Chase Game</h2>
+        <p>Multiplayer chase games</p>
+        <a href="/chess-master/index.html" target = "_blank">
+        <div class="services_btn"><button>Get Started</button></div></a>
+      </div>
+
+      <div class="services_card">
+        <h2>The Snake Game</h2>
+        <p>Snake game with music</p>
+        <a href ="https://tornanirheda.000webhostapp.com/" target = "_blank">
+        <div class="services_btn"><button>Get Started</button></div>
+      </a>
+      </div>
+
+      <div class="services_card">
+        <h2>Tic Tac Toe</h2>
+        <p>AI powered technology</p>
+        <a href="https://playtictactoe.org/" target = "_blank">
+        <div class="services_btn"><button>Get Started</button></div></a>
+      </div>
+
+      <div class="services_card">
+        <h2>Infinite Choices</h2>
+        <p>1000's of games</p>
+        <div class="services_btn"><button>Get Started</button></div>
+      </div>
+    </div>
+    
+  </div>
+      <script>
+         $('.btn').click(function(){
+           $(this).toggleClass("click");
+           $('.sidebar').toggleClass("show");
+         });
+           $('.feat-btn').click(function(){
+             $('nav ul .feat-show').toggleClass("show");
+             $('nav ul .first').toggleClass("rotate");
+           });
+           $('.serv-btn').click(function(){
+             $('nav ul .serv-show').toggleClass("show1");
+             $('nav ul .second').toggleClass("rotate");
+           });
+           $('nav ul li').click(function(){
+             $(this).addClass("active").siblings().removeClass("active");
+           });
+      </script>
 </body>
 </html>
