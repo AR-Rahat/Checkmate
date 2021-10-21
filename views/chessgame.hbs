@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Chess | Checkamte</title>
     <link rel="stylesheet" href="/internalstyle.css">
     <link rel="stylesheet" href="/style.css">
+    {{!-- <link rel="stylesheet" href="/signupstyle.css"> --}}
      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="icon" href="/image/Screenshot_1.jpg" type="image/gif">
+    <style>
+      body{
+        background-color: bisque;
+      }
+      table{
+        display: grid;
+        padding-left: 25px;
+        margin: auto;
+        box-shadow: 0 0 1px 1px;
+        border-collapse: collapse;
+      }
+      td{
+        padding: 40px;
+        background-color: black;
+      }
+
+      tr:nth-child(odd) td:nth-child(odd),
+      tr:nth-child(even) td:nth-child(even){
+        background-color: white;
+      }
+      
+    </style>
 </head>
 <body id="body">
-  {{!-- <header>
-    <nav>
-      <ul class="nav">
-        <li><a href="/">Checkmate</a></li>
-      </ul>
-    </nav>
-  </header> --}}
-
-  <div class="btn">
+     <div class="btn">
          <span class="fas fa-bars"></span>
       </div>
       <nav class="sidebar">
@@ -34,59 +49,15 @@
                <span class="fas fa-caret-down first"></span>
                </a>
                <ul class="feat-show">
-                  <li><a href="#">The Chess Game</a></li>
                   <li><a href="https://tornanirheda.000webhostapp.com/" target="_blank">The Snake Game</a></li>
                   <li><a href="#">Tic Tac Toe</a></li>
                </ul>
             </li>
-            {{!-- <li>
-               <a href="#" class="serv-btn">Account
-               <span class="fas fa-caret-down second"></span>
-               </a>
-               <ul class="serv-show">
-                  <li><a href="#">Change Profile Picture</a></li>
-                  <li><a href="#">Change Usename</a></li>
-                  <li><a href="#">Change Name</a></li>
-                  <li><a href="#">Change Password</a></li>
-               </ul>
-            </li> --}}
             <li><a href="#">Feedback</a></li>
             <li><a href="#">Report</a></li>
-            {{!-- <li><a href="#">Messages</a></li>
-            <li><a href="#">Logout</a></li> --}}
          </ul>
       </nav>
-      <div class="services" id="services">
-    <h1>Available games</h1>
-    <div class="services_wrapper">
-      <div class="services_card">
-        <h2>The Chase Game</h2>
-        <p>Multiplayer chase games</p>
-        <a href="/chess-master/index.html" target = "_blank">
-        <div class="services_btn"><button>Get Started</button></div></a>
-      </div>
-
-      <div class="services_card">
-        <h2>The Snake Game</h2>
-        <p>Snake game with music</p>
-        <a href ="https://tornanirheda.000webhostapp.com/" target = "_blank">
-        <div class="services_btn"><button>Get Started</button></div>
-      </a>
-      </div>
-
-      <div class="services_card">
-        <h2>Tic Tac Toe</h2>
-        <p>AI powered technology</p>
-        <a href="https://playtictactoe.org/" target = "_blank">
-        <div class="services_btn"><button>Get Started</button></div></a>
-      </div>
-
-      <div class="services_card">
-        <h2>Infinite Choices</h2>
-        <p>1000's of games</p>
-        <div class="services_btn"><button>Get Started</button></div>
-      </div>
-    </div>
+     
 
     <div class="action">
       <div class="profile" onclick="menuToggle();">
@@ -105,15 +76,94 @@
       </div>
     </div>
 
-    <div class="homecontent">
-      <h1>Don't know how to play Chess? Not a problem. <br>Watch the video.</h1>
-      <div class="homecontent1">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/NAIQyoPcjNM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="board">
+      <div class="header">Header</div>
+      <div class="timeheader">Timer</div>
+      <div class="game">Game
+        <table class="chesstable">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
       </div>
-       <h1>Don't know how to play Tak Tac Toe? Not a problem. <br>Watch the video.</h1>
-      <div class="homecontent1">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/OmC07DvEayY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+      <div class="time">Menu</div>
     </div>
     
   </div>

@@ -457,8 +457,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
   padding: 10rem 0;
+  z-index: 10;
 }
 
 .services h1 {

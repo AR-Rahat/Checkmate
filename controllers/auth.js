@@ -259,3 +259,7 @@ exports.homepage = (req, res) => {
 
   //const { email_username, password } = req.body;
 };
+
+exports.chessgame = (req, res) => {
+  console.log(req.body);
+};

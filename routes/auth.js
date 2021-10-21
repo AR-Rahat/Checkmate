@@ -7,5 +7,7 @@ router.post("/signup", authcontroller.signup);
 router.post("/verify", authcontroller.verify);
 router.post("/login", authcontroller.login);
 router.post("/homepage", authcontroller.homepage);
+router.post("/chessgame", authcontroller.chessgame);
 
 module.exports = router;
+

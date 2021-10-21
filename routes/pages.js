@@ -26,4 +26,8 @@ router.get("/homepage", (req, res) => {
   res.render("homepage");
 });
 
+router.get("/chessgame", (req, res) => {
+  res.render("chessgame");
+});
+
 module.exports = router;
