@@ -37,6 +37,10 @@ exports.signup = (req, res) => {
         return res.render("signup", {
           message: "Passwords do not match",
         });
+      } else if (password.length < 8) {
+        return res.render("signup", {
+          message: "Password must be 8 characters long",
+        });
       } else cnt1 = 1;
     }
   );
@@ -158,8 +162,11 @@ exports.verify = (req, res) => {
 exports.login = (req, res) => {
   console.log(req.body);
 
-  const { email_username, password } = req.body;
+  const { email_username, password, remember } = req.body;
 
+  if (remember == "yes") {
+    console.log("remembered");
+  }
   // let username = email_username;
   // let login_pass = password;
   // if (username.indexof("@") > -1) {

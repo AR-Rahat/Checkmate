@@ -15,6 +15,18 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
+  // if (req.session.viewcount) {
+  //   req.session.viewcount++;
+  //   return res.render("login", {
+  //     message: "you have visited this page " + $req.session.viewcount + "times",
+  //   });
+  // } else {
+  //   req.session.viewcount = 1;
+  //   return res.render("login", {
+  //     message: "you have visited this page " + $req.session.viewcount + "times",
+  //   });
+  // }
+  console.log(req.session);
   res.render("login");
 });
 
