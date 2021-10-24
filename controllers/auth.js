@@ -243,6 +243,13 @@ exports.login = (req, res) => {
               bcrypt.compare(password, results[0].password).then((doMatch) => {
                 if (doMatch) {
                   console.log("login Successful");
+                  if (remember == "yes") {
+                    req.session.isAuth = true;
+                    console.log(req.session.isAuth);
+                  } else {
+                    req.session.isAuth = false;
+                    console.log(req.session.isAuth);
+                  }
                   if (results.length > 0) {
                     res.render("homepage");
                   }

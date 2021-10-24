@@ -1,14 +1,31 @@
 const express = require("express");
+const session = require("express-session");
 
 const router = express.Router();
-
-router.get("/", (req, res) => {
+const isAuth = (req, res, next) => {
+  console.log(req.session);
+  if (req.session.isAuth === true) {
+    // router.get("/homepage", (req, res) => {
+    //   res.render("homepage");
+    // });
+    res.redirect("/homepage");
+  } else {
+    // router.get("/homepage", (req, res) => {
+    //   res.render("homepage");
+    // });
+    next();
+  }
+};
+router.get("/", isAuth, (req, res) => {
   res.render("index");
 });
 
 // router.get("/index", (req, res) => {
 //   res.render('index')
 // })
+// router.get("/", (req, res) => {
+//   res.render("index");
+// });
 
 router.get("/signup", (req, res) => {
   res.render("signup");
