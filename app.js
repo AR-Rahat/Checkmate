@@ -8,41 +8,41 @@ var MySQLStore = require("express-mysql-session")(session);
 //const db = require("./database");
 //const db = require("database");
 
-// var options = {
-//   host: process.env.DATABASE_HOST,
-//   user: process.env.DATABASE_USER,
-//   password: process.env.DATABASE_PASSWORD,
-//   database: process.env.DATABASE,
-//   port: 3306,
-//   createDatabaseTable: false,
-//   schema: {
-//     tableName: "custom_sessions_table_name",
-//     columnNames: {
-//       session_id: "custom_session_id",
-//       expires: "custom_expires_column_name",
-//       data: "custom_data_column_name",
-//     },
-//   },
-// };
-//var sessionStore = new MySQLStore(options);
-//var connection = mysql.createConnection(options);
-// var sessionStore = new MySQLStore(
-//   {
-//     expiration: 10800000,
-//     createDatabaseTable: true,
-//     schema: {
-//       tableName: "session",
-//       columnNames: {
-//         session_id: "session_id",
-//         expires: "expires",
-//         data: "data",
-//       },
-//     },
-//   },
-//   connection
-// );
+var options = {
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: '',
+  database: 'checkmate'
 
-dotenv.config({ path: "./.env" });
+  // createDatabaseTable: false,
+  // schema: {
+  //         tableName: "session",
+  //         columnNames: {
+  //           session_id: "session_id",
+  //           expires: "expires",
+  //           data: "data",
+  //         },
+  //       }
+}
+//var sessionStore = new MySQLStore(options);
+var connection = mysql.createConnection(options);
+var sessionStore = new MySQLStore({
+  expiration: 10800000,
+  createDatabaseTable: true,
+  schema: {
+    tableName: "session",
+    columnNames: {
+      session_id: "session_id",
+      expires: "expires",
+      data: "data",
+    },
+  },
+}, connection);
+
+dotenv.config({
+  path: "./.env"
+});
 
 const app = express();
 // const db = mysql.createConnection({
@@ -56,22 +56,28 @@ const app = express();
 //app.use(express.static(path.join(__dirname, "public")));
 const publicDirectory = path.join(__dirname, "./public");
 app.use(express.static(publicDirectory));
-// app.use(
-//   session({
-//     secret: "pegasus",
-//     store: sessionStore,
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: {
-//       maxAge: 1000 * 60 * 60 * 24,
-//     },
-//   })
-// );
+app.use(
+  session({
+    key: 'keyin',
+    secret: "keyboard cat",
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24,
+    }
+  })
+);
 
 //* Parse URL-encoded bodies (as sent by HTML forms)
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 //* Parse JSON bodies (as sent by API clients)
 app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}))
 
 app.set("view engine", "hbs");
 
@@ -81,8 +87,8 @@ app.set("view engine", "hbs");
 // });
 
 //*Define Routes
-app.use("/", require("./routes/pages"));
-app.use("/auth", require("./routes/auth"));
+//app.use("/", require("./routes/pages"));
+//app.use("/auth", require("./routes/auth"));
 
 // app.get("/", (req, res) => {
 //   // res.send("<h1>Home Page</h1>")
@@ -91,6 +97,36 @@ app.use("/auth", require("./routes/auth"));
 // app.get("/chess-master", (req, res) => {
 //   // res.send("<h1>Home Page</h1>")
 //   res.render('./chess-master/index')
+// })
+
+//************ for check session ***********************/
+// const user = {
+//   name: 'Md Asfakur Rahat',
+//   id: 'rahat',
+//   pass: 12345
+// }
+
+// app.get('/login', (req, res) => {
+//   const {
+//     id,
+//     pass
+//   } = req.body;
+//   if (id != user.id || pass != user.pass) {
+//     return res.status(401).json({
+//       error: true,
+//       message: 'Wrong username or pass'
+//     })
+//   } else {
+//     req.session.userinfo = user.name
+//     res.send("Login successful")
+//   }
+// })
+// app.get('/', (req, res) => {
+//   if (req.session.userinfo) {
+//     res.send("Hello" + req.session.userinfo + "welcome")
+//   } else {
+//     res.send('Not logged in')
+//   }
 // })
 
 app.listen(5001, () => {
